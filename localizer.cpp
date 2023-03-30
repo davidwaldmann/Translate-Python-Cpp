@@ -43,8 +43,19 @@ vector< vector <float> > initialize_beliefs(vector< vector <char> > grid) {
 	vector< vector <float> > newGrid;
 
 	// your code here
+	int height = grid.size();
+	int width = grid[0].size();
+	vector<float> row;
 
-	return newGrid;
+	for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            row.push_back(1);
+        }
+        newGrid.push_back(row);
+        row.clear();
+	}
+
+	return normalize(newGrid);
 }
 
 /**
@@ -84,16 +95,27 @@ vector< vector <float> > initialize_beliefs(vector< vector <char> > grid) {
     @return - a normalized two dimensional grid of floats
          representing the updated beliefs for the robot.
 */
-vector< vector <float> > move(int dy, int dx,
-  vector < vector <float> > beliefs,
-  float blurring)
+vector< vector <float> > move(int dy, int dx, vector < vector <float> > beliefs, float blurring)
 {
 
-  vector < vector <float> > newGrid;
+    vector < vector <float> > newGrid;
 
-  // your code here
+    // your code here
+    int height = beliefs.size();
+	int width = beliefs[0].size();
+	vector<float> row;
 
-  return blur(newGrid, blurring);
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            int old_i = mod(i - dx, height);
+            int old_j = mod(j - dy, width);
+            row.push_back(beliefs[old_i][old_j]);
+        }
+        newGrid.push_back(row);
+        row.clear();
+    }
+
+    return blur(newGrid, blurring);
 }
 
 
@@ -143,6 +165,23 @@ vector< vector <float> > sense(char color,
 	vector< vector <float> > newGrid;
 
 	// your code here
+	int height = beliefs.size();
+	int width = beliefs[0].size();
+	vector<float> row;
+	float total_prob = 0;
+
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            if (grid[i][j] == color) {
+                row.push_back(beliefs[i][j] * p_hit);
+            } else {
+                row.push_back(beliefs[i][j] * p_miss);
+            }
+            total_prob += row.back();
+        }
+        newGrid.push_back(row);
+        row.clear();
+    }
 
 	return normalize(newGrid);
 }
