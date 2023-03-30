@@ -2,6 +2,8 @@
 #include "tests.h"
 #include "Simulation.h"
 #include "helpers.h"
+#include "debugging_helpers.h"
+#include "localizer.h"
 
 using namespace std;
 

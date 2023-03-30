@@ -10,13 +10,14 @@
 */
 
 #include <algorithm>
+#include <iostream>
 #include "Simulation.h"
 #include "localizer.h"
 
 /**
 Constructor for the Simulation class.
 */
-Simulation::Simulation(vector < vector <char> > map,
+Simulation::Simulation(std::vector < std::vector <char> > map,
 	float blurring,
 	float hit_prob,
 	std::vector<int> start_pos
@@ -35,8 +36,8 @@ Simulation::Simulation(vector < vector <char> > map,
 /**
 Grabs colors from the grid map.
 */
-vector <char> Simulation::get_colors() {
-	vector <char> all_colors;
+std::vector <char> Simulation::get_colors() {
+	std::vector <char> all_colors;
 	char color;
 	int i,j;
 	for (i=0; i<height; i++) {
@@ -46,7 +47,7 @@ vector <char> Simulation::get_colors() {
 				/* v contains x */
 			} else {
 				all_colors.push_back(color);
-				cout << "adding color " << color << endl;
+				std::cout << "adding color " << color << std::endl;
 				/* v does not contain x */
 			}
 		}
@@ -64,8 +65,8 @@ running the output.
 */
 // int main() {
 
-// 	vector < vector <char> > map;
-// 	vector <char> mapRow;
+// 	std::vector < std::vector <char> > map;
+// 	std::vector <char> mapRow;
 // 	int i, j, randInt;
 // 	char color;
 // 	std::vector<int> pose(2);
@@ -86,11 +87,11 @@ running the output.
 // 		}
 // 		map.push_back(mapRow);
 // 	}
-// 	cout << "map is\n";
+// 	std::cout << "map is\n";
 // 	Simulation simulation (map, 0.1, 0.9, pose);
-// 	cout << "initialization success!\n";
+// 	std::cout << "initialization success!\n";
 // 	show_grid(map);
 
-// 	cout << "x, y = (" << simulation.true_pose[0] << ", " << simulation.true_pose[1] << ")" << endl;
+// 	std::cout << "x, y = (" << simulation.true_pose[0] << ", " << simulation.true_pose[1] << ")" << std::endl;
 // 	return 0;
 // }

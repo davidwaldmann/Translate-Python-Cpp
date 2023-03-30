@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Simulation.cpp" />
+		<Unit filename="Simulation.h" />
 		<Unit filename="debugging_helpers.cpp" />
 		<Unit filename="debugging_helpers.h" />
 		<Unit filename="helpers.cpp" />
