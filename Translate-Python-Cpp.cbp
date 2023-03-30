@@ -40,7 +40,6 @@
 		<Unit filename="helpers.h" />
 		<Unit filename="localizer.cpp" />
 		<Unit filename="localizer.h" />
-		<Unit filename="main.cpp" />
 		<Unit filename="tests.cpp" />
 		<Unit filename="tests.h" />
 		<Extensions>

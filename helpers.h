@@ -4,20 +4,22 @@
 #include <vector>
 #include <string>
 
-// Normalizes a grid of numbers. 
+// Normalizes a grid of numbers.
 std::vector< std::vector<float> > normalize(std::vector< std::vector <float> > grid);
 
-/** 
-	Blurs (and normalizes) a grid of probabilities by spreading 
-	probability from each cell over a 3x3 "window" of cells. This 
-	function assumes a cyclic world where probability "spills 
+/**
+	Blurs (and normalizes) a grid of probabilities by spreading
+	probability from each cell over a 3x3 "window" of cells. This
+	function assumes a cyclic world where probability "spills
 	over" from the right edge to the left and bottom to top.
 */
 std::vector < std::vector <float> > blur(std::vector < std::vector < float> > grid, float blurring);
 
+int mod(int, int);
+
 /**
-    Determines when two grids of floating point numbers 
-    are "close enough" that they should be considered 
+    Determines when two grids of floating point numbers
+    are "close enough" that they should be considered
     equal. Useful for battling "floating point errors".
 */
 bool close_enough(std::vector < std::vector <float> > g1, std::vector < std::vector <float> > g2);
