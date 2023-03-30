@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1584209020 source:c:\users\fujitsu\documents\git-projekte\intro-to-self-driving-cars_udacity-nanodegree\translate-python-cpp\translate-python-cpp\main.cpp
+	<iostream>
+
+1680142152 source:c:\users\fujitsu\documents\git-projekte\intro-to-self-driving-cars_udacity-nanodegree\translate-python-cpp\translate-python-cpp\debugging_helpers.cpp
+	<vector>
+	<iostream>
+	"debugging_helpers.h"
+
+1680140594 c:\users\fujitsu\documents\git-projekte\intro-to-self-driving-cars_udacity-nanodegree\translate-python-cpp\translate-python-cpp\debugging_helpers.h
+	<vector>
+
+1680140594 source:c:\users\fujitsu\documents\git-projekte\intro-to-self-driving-cars_udacity-nanodegree\translate-python-cpp\translate-python-cpp\helpers.cpp
+	<vector>
+	<iostream>
+	<cmath>
+	<string>
+	<fstream>
+	"helpers.h"
+
+1680140594 c:\users\fujitsu\documents\git-projekte\intro-to-self-driving-cars_udacity-nanodegree\translate-python-cpp\translate-python-cpp\helpers.h
+	<vector>
+	<string>
+
+1680170861 source:c:\users\fujitsu\documents\git-projekte\intro-to-self-driving-cars_udacity-nanodegree\translate-python-cpp\translate-python-cpp\localizer.cpp
+	"localizer.h"
+	"helpers.h"
+	<stdlib.h>
+	"debugging_helpers.h"
+
+1680140594 c:\users\fujitsu\documents\git-projekte\intro-to-self-driving-cars_udacity-nanodegree\translate-python-cpp\translate-python-cpp\localizer.h
+	<vector>
+
